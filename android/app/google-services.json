@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "498044780878",
+    "firebase_url": "https://vip-win-2adcc-default-rtdb.firebaseio.com",
+    "project_id": "vip-win-2adcc",
+    "storage_bucket": "vip-win-2adcc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498044780878:android:a248bac8e6a6d1a9e41e1f",
+        "android_client_info": {
+          "package_name": "com.vixh.vipwin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN-2Q9FEDq5ZAv_F5tO6NvsnyzOEHP5eE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498044780878:android:1c06c94ef206950fe41e1f",
+        "android_client_info": {
+          "package_name": "com.vixh.vipwinadmin.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN-2Q9FEDq5ZAv_F5tO6NvsnyzOEHP5eE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
