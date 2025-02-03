@@ -1,0 +1,34 @@
+[
+    {
+      "title": "Amazing Wireless Headphones",
+      "rating": 4.5,
+      "image": "https://i.rtings.com/assets/pages/L5p4nCs2/best-sennheiser-20230425-medium.jpg?format=auto",
+      "description": "These wireless headphones provide crystal-clear sound quality with deep bass and active noise cancellation. They are very comfortable for long listening sessions and have a sleek, modern design. The battery life is excellent, lasting up to 20 hours on a single charge. Perfect for both casual listening and travel."
+    },
+    {
+      "title": "Smartphone with Excellent Camera",
+      "rating": 4.8,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpZqz0rNVbqUANj3m1ZrUYqwJRfEEk5SLZow&s",
+      "description": "This smartphone has an outstanding camera with 108MP resolution. The photo quality is incredible, even in low light, and it features a range of fun and useful photography modes. The battery lasts all day and the performance is smooth and fast. Highly recommend for tech enthusiasts and photographers."
+    },
+    {
+      "title": "Comfortable Memory Foam Mattress",
+      "rating": 4.7,
+      "image": "https://5.imimg.com/data5/SELLER/Default/2024/10/460696116/QV/RF/AS/13062938/dreamzee-ortho-back-memory-foam-mattress-medium-comfort-500x500.png",
+      "description": "This memory foam mattress offers an unparalleled sleeping experience. It contours to your body perfectly, relieving pressure points and providing support where needed. Ideal for people with back pain. It's soft yet firm and keeps its shape over time. Worth every penny for better sleep quality."
+    },
+    {
+      "title": "Durable Waterproof Backpack",
+      "rating": 4.3,
+      "image": "https://images.meesho.com/images/products/156171743/md48q_512.webp",
+      "description": "This backpack is perfect for hiking and outdoor adventures. It's made from tough, waterproof material that keeps your belongings safe even in heavy rain. The straps are adjustable and padded for comfort, and there's plenty of space for all your gear. Great for both casual use and travel."
+    },
+    {
+      "title": "Noise-Canceling Over-Ear Headphones",
+      "rating": 4.6,
+      "image": "https://m.media-amazon.com/images/I/718oha0Bd0L._AC_UF350,350_QL80_.jpg",
+      "description": "These noise-canceling headphones are a game-changer for commuters and travelers. They block out unwanted noise effectively, letting you enjoy music or podcasts without interruption. The sound quality is top-notch, and the build is solid. A must-have for anyone who needs peace and quiet on the go."
+    }
+     
+  ]
+  

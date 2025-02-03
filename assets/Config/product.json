@@ -1,0 +1,73 @@
+[
+    {
+      "title": "Wireless Bluetooth Headphones",
+      "description": "High-quality over-ear Bluetooth headphones with noise cancellation and a 20-hour battery life.",
+      "price": 99.99,
+      "lineThroughPrice": 149.99,
+      "images": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0aqI-KBZwtj1NQaZC1GGG-730POvurT3sRA&s",
+        "https://m.media-amazon.com/images/I/61Gzf69kVPL._AC_UF1000,1000_QL80_.jpg",
+        "https://blaupunktaudio.in/cdn/shop/products/bh31-bluetooth-wireless-headphone-black-blaupunkt-india-1.png?v=1711006562"
+      ],
+      "isSale": true,
+
+      "size" : ["5-6 Inches", "6-7 Inches", "7-8 Inches", "8-9 Inches" ]
+    },
+    {
+      "title": "Smartphone 12 Pro",
+      "description": "Latest model with a 6.5-inch display, 128GB storage, and 5G connectivity. Great camera and performance.",
+      "price": 899.99,
+      "lineThroughPrice": 999.99,
+      "images": [
+        "https://down-br.img.susercontent.com/file/br-11134207-7qukw-lgfi73bb2yiu40",
+        "https://images.jdmagicbox.com/quickquotes/images_main/12-pro-5g-ram-8-gb-128-gb-navigator-beige-58-272750111-1kmke6pu.jpg"
+      ],
+      "isSale": false,"size" : ["5-6 Inches", "6-7 Inches", "7-8 Inches", "8-9 Inches" ]
+    },
+    {
+      "title": "Stainless Steel Water Bottle",
+      "description": "Durable, BPA-free, double-wall insulated water bottle with a sleek design. Keeps drinks cold for 24 hours.",
+      "price": 25.99,
+      "lineThroughPrice": 39.99,
+      "images": [
+        "https://fns.co.in/cdn/shop/files/1_18641b2e-f293-4509-8b9b-8d4b52873dc5.jpg?v=1723549064",
+        "https://ezahk.com/cdn/shop/products/31nP68i4GeL.jpg?v=1669706120"
+      ],
+      "isSale": true,"size" : ["5-6 Inches", "6-7 Inches", "7-8 Inches", "8-9 Inches" ]
+    },
+    {
+      "title": "LED Desk Lamp",
+      "description": "Adjustable LED desk lamp with touch control, multiple brightness settings, and energy-efficient lighting.",
+      "price": 39.99,
+      "lineThroughPrice": 59.99,
+      "images": [
+        "https://m.media-amazon.com/images/I/61QPRxJk3dL.jpg",
+        "https://5.imimg.com/data5/SELLER/Default/2024/1/376210579/ZN/GL/TR/24829239/gold-metal-led-desk-bar-table-lamp-comes-with-touch-sensor-rechargeable.jpg"
+      ],
+      "isSale": false, "size" : ["5-6 Inches", "6-7 Inches", "7-8 Inches", "8-9 Inches" ]
+    },
+    {
+      "title": "Gaming Laptop",
+      "description": "Powerful gaming laptop with a 15.6-inch display, Intel Core i7 processor, 16GB RAM, and NVIDIA GTX 1650 graphics.",
+      "price": 1299.99,
+      "lineThroughPrice": 1599.99,
+      "images": [
+        "https://i.pcmag.com/imagery/roundups/01hiB08j7yaJGJmPl2YhRRH-59..v1713199550.jpg",
+        "https://jarrods.tech/wp-content/uploads/2023/12/asus-rog-zephyrus-m16-2023-gaming-laptop-1024x576.jpg",
+        "https://wallpapers.com/images/hd/triple-monitor-black-razer-gaming-laptop-rhj14osimzdx9w1v.jpg"
+      ],
+      "isSale": true,"size" : ["5-6 Inches", "6-7 Inches", "7-8 Inches", "8-9 Inches" ]
+    },
+    {
+      "title": "Portable Bluetooth Speaker",
+      "description": "Compact Bluetooth speaker with deep bass, 360-degree sound, and waterproof features. Perfect for outdoor use.",
+      "price": 49.99,
+      "lineThroughPrice": 69.99,
+      "images": [
+        "https://m.media-amazon.com/images/I/51DzwHq7JPL._AC_UF1000,1000_QL80_.jpg",
+        "https://x.imastudent.com/content/0024227_jbl-partybox-310-portable-bluetooth-speaker-with-party-lights_500.jpeg"
+      ],
+      "isSale": false, "size" : ["5-6 Inches", "6-7 Inches", "7-8 Inches", "8-9 Inches" ]
+    }
+  ]
+  

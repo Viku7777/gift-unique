@@ -53,13 +53,13 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAFaH2QQT_qej2-9XisFVi8XORuwTImrS8',
-    appId: '1:498044780878:web:ef75f2aabc6f0b38e41e1f',
-    messagingSenderId: '498044780878',
-    projectId: 'vip-win-2adcc',
-    authDomain: 'vip-win-2adcc.firebaseapp.com',
-    databaseURL: 'https://vip-win-2adcc-default-rtdb.firebaseio.com',
-    storageBucket: 'vip-win-2adcc.appspot.com',
-    measurementId: 'G-4E4YCFG3ML',
-  );
+      apiKey: "AIzaSyB291S3jeVjIRDw28RMQlZXkAQhwMffIhI",
+      authDomain: "gift-store-2c303.firebaseapp.com",
+      databaseURL:
+          "https://gift-store-2c303-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "gift-store-2c303",
+      storageBucket: "gift-store-2c303.firebasestorage.app",
+      messagingSenderId: "796698668874",
+      appId: "1:796698668874:web:a8320ae6c25b67433ddbb3",
+      measurementId: "G-DSP12R4KRG");
 }

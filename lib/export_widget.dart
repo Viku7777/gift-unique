@@ -1,0 +1,25 @@
+// ignore_for_file: must_be_immutable
+export 'package:flutter/material.dart';
+export 'package:get/get.dart';
+export 'package:color_game/user/Utils/Controller/design_controller.dart';
+export 'package:color_game/user/View/Account/Widget/login_view.dart';
+export 'package:color_game/user/View/Account/Widget/signup_view.dart';
+export 'package:color_game/user/View/Dashboard/Widgets/bottom_widget_view.dart';
+export 'package:color_game/main.dart';
+export 'package:color_game/user/Components/custom_primary_btn.dart';
+export 'package:color_game/user/Components/custom_textfield.dart';
+export 'package:color_game/user/Components/custom_txt_btn.dart';
+export 'package:flutter_svg/svg.dart';
+export 'package:color_game/user/View/Account/sign_in_account.dart';
+export 'package:color_game/user/View/Dashboard/dashboard_view.dart';
+export 'package:color_game/app_config.dart';
+export 'package:carousel_slider/carousel_slider.dart';
+export 'package:color_game/user/Utils/Controller/product_controller.dart';
+export 'package:color_game/user/View/Dashboard/Widgets/about_us_slider.dart';
+export 'package:color_game/user/View/Dashboard/Widgets/product_card.dart';
+export 'package:color_game/user/Components/custom_appbar.dart';
+export 'package:photo_view/photo_view.dart';
+export 'package:color_game/user/View/Cart/cart_view.dart';
+export 'package:color_game/user/View/Catalog/catalog_view.dart';
+export 'package:color_game/user/View/Drawer/View/drawer_view.dart';
+export 'package:color_game/user/View/Wishlist/wishlist_view.dart';
