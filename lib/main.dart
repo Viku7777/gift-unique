@@ -23,8 +23,8 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.web);
   styleSheet = StyleManager();
   String currentUrl = html.window.location.href;
-  log("path is ==> $currentUrl");
-  pathremove.setUrlStrategy(pathremove.PathUrlStrategy());
+  // log("path is ==> $[currentUrl]");
+  // pathremove.setUrlStrategy(pathremove.PathUrlStrategy());
   runApp(const MyApp());
 }
 

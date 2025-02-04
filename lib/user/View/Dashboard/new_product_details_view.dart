@@ -181,7 +181,7 @@ class _NewProductDetailsViewState extends State<NewProductDetailsView> {
 
                         Clipboard.setData(ClipboardData(
                             text:
-                                "$currentUrl/product/${widget.productModel.uuid}"));
+                                "https://$currentUrl/#/product/${widget.productModel.uuid}"));
                       },
                       icon: const Icon(
                         Icons.share,
