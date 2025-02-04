@@ -1,11 +1,11 @@
 // ignore_for_file: invalid_use_of_protected_member, must_be_immutable, override_on_non_overriding_member
 
-import 'dart:developer';
+import 'dart:developer' as dev;
 import 'dart:io';
 import 'dart:html' as html;
 import 'dart:math';
-import 'dart:typed_data';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:color_game/admin/controller/admin_controller.dart';
 import 'package:color_game/user/Components/photo_view.dart';
@@ -22,7 +22,9 @@ import '../../../export_widget.dart';
 
 class NewProductDetailsView extends StatefulWidget {
   NewProductModel productModel;
-  NewProductDetailsView({required this.productModel, super.key});
+  bool clearstack;
+  NewProductDetailsView(
+      {required this.productModel, super.key, this.clearstack = false});
 
   @override
   State<NewProductDetailsView> createState() => _NewProductDetailsViewState();
@@ -49,7 +51,7 @@ class _NewProductDetailsViewState extends State<NewProductDetailsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppbar(),
+      appBar: widget.clearstack ? createstackAppbar() : customAppbar(),
       body: ListView(
         shrinkWrap: true,
         children: [
@@ -165,10 +167,27 @@ class _NewProductDetailsViewState extends State<NewProductDetailsView> {
               // Product Title
 
               styleSheet.SPACING.addHeight(styleSheet.SPACING.medium),
-              Text(
-                widget.productModel.title,
-                // 'Wooden Slice Engraved photo frame',
-                style: styleSheet.TEXT_CONDENSED.FS_MEDIUM_24,
+              Row(
+                children: [
+                  Text(
+                    widget.productModel.title,
+                    // 'Wooden Slice Engraved photo frame',
+                    style: styleSheet.TEXT_CONDENSED.FS_MEDIUM_24,
+                  ),
+                  const Spacer(),
+                  IconButton(
+                      onPressed: () {
+                        String currentUrl = html.window.location.host;
+
+                        Clipboard.setData(ClipboardData(
+                            text:
+                                "$currentUrl/product/${widget.productModel.uuid}"));
+                      },
+                      icon: const Icon(
+                        Icons.share,
+                        color: Colors.black,
+                      ))
+                ],
               ),
 
               styleSheet.SPACING.addHeight(styleSheet.SPACING.small),

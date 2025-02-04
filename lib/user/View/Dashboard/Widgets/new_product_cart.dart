@@ -1,7 +1,6 @@
 // ignore_for_file: must_be_immutable
 import 'package:color_game/admin/controller/admin_controller.dart';
 import 'package:color_game/user/Utils/Controller/wishlist_controller.dart';
-import 'package:color_game/user/Utils/Model/product_model.dart';
 
 import '../../../../export_widget.dart';
 
