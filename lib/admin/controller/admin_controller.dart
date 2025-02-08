@@ -26,6 +26,7 @@ enum OrderStatusType {
 class AdminController extends GetxController {
   List<NewProductModel> allProducts = [];
   List<CategoryModel> allCategorys = [];
+  List<String> productType = ["text", "Without Img", "With Image"];
   List<OrderDetailsModel> wishlistItem = [];
   List<OrderDetailsModel> allOrdersView = [];
   TextEditingController number = TextEditingController();
@@ -219,7 +220,7 @@ class NewProductModel {
   final num rating;
   final num totalrating;
   final String categoryID;
-  final bool isImageRequired;
+  final bool? isImageRequired;
   final bool? isSale;
   final List<Variants> variant;
   final List<dynamic> images;

@@ -309,7 +309,7 @@ class _NewProductDetailsViewState extends State<NewProductDetailsView> {
                   ],
                 ),
 
-              if (widget.productModel.isImageRequired)
+              if (widget.productModel.isImageRequired != false)
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -320,79 +320,82 @@ class _NewProductDetailsViewState extends State<NewProductDetailsView> {
                       hintText: "Any message you want to print on it..",
                     ),
                     styleSheet.SPACING.addHeight(styleSheet.SPACING.large),
-                    Text("Upload Here"),
-                    styleSheet.SPACING.addHeight(styleSheet.SPACING.small),
-                    if (_imageData == null) ...[
-                      Container(
-                        width: Get.width,
-                        padding: styleSheet.SPACING.PADDING_MEDIUM,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(
-                              styleSheet.SHAPES.RADIUS_MEDIUM),
-                          border:
-                              Border.all(color: styleSheet.COLORS.GREY_LIGHT),
-                        ),
-                        child: Column(
-                          children: [
-                            Container(
-                              padding: styleSheet.SPACING.PADDING_SMALL,
-                              decoration: BoxDecoration(
-                                color: styleSheet.COLORS.ACTIVE_GREEN,
-                                borderRadius: BorderRadius.circular(
-                                    styleSheet.SHAPES.RADIUS_MIN),
-                                border: Border.all(
-                                    color: styleSheet.COLORS.GREY_LIGHT),
-                              ),
-                              child: InkWell(
-                                onTap: () async {
-                                  XFile? img = await ImagePicker.platform
-                                      .getImageFromSource(
-                                          source: ImageSource.gallery);
-                                  if (img == null) {
-                                    Get.snackbar("Error", "Image not Selected");
-                                  } else {
-                                    final bytes = await img.readAsBytes();
-                                    _imageData = bytes;
-                                    setState(() {});
-                                  }
-                                },
-                                child: Text(
-                                  "Choose file",
-                                  style:
-                                      TextStyle(color: styleSheet.COLORS.WHITE),
+                    if (widget.productModel.isImageRequired == true) ...[
+                      Text("Upload Here"),
+                      styleSheet.SPACING.addHeight(styleSheet.SPACING.small),
+                      if (_imageData == null) ...[
+                        Container(
+                          width: Get.width,
+                          padding: styleSheet.SPACING.PADDING_MEDIUM,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(
+                                styleSheet.SHAPES.RADIUS_MEDIUM),
+                            border:
+                                Border.all(color: styleSheet.COLORS.GREY_LIGHT),
+                          ),
+                          child: Column(
+                            children: [
+                              Container(
+                                padding: styleSheet.SPACING.PADDING_SMALL,
+                                decoration: BoxDecoration(
+                                  color: styleSheet.COLORS.ACTIVE_GREEN,
+                                  borderRadius: BorderRadius.circular(
+                                      styleSheet.SHAPES.RADIUS_MIN),
+                                  border: Border.all(
+                                      color: styleSheet.COLORS.GREY_LIGHT),
+                                ),
+                                child: InkWell(
+                                  onTap: () async {
+                                    XFile? img = await ImagePicker.platform
+                                        .getImageFromSource(
+                                            source: ImageSource.gallery);
+                                    if (img == null) {
+                                      Get.snackbar(
+                                          "Error", "Image not Selected");
+                                    } else {
+                                      final bytes = await img.readAsBytes();
+                                      _imageData = bytes;
+                                      setState(() {});
+                                    }
+                                  },
+                                  child: Text(
+                                    "Choose file",
+                                    style: TextStyle(
+                                        color: styleSheet.COLORS.WHITE),
+                                  ),
                                 ),
                               ),
-                            ),
-                            styleSheet.SPACING
-                                .addHeight(styleSheet.SPACING.small),
-                            const Text("or drop file to upload"),
-                          ],
+                              styleSheet.SPACING
+                                  .addHeight(styleSheet.SPACING.small),
+                              const Text("or drop file to upload"),
+                            ],
+                          ),
                         ),
-                      ),
-                      styleSheet.SPACING.addHeight(styleSheet.SPACING.medium)
-                    ] else
-                      Container(
-                        width: 100,
-                        height: 100,
-                        margin: EdgeInsets.only(bottom: 20),
-                        padding: styleSheet.SPACING.PADDING_MEDIUM,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: MemoryImage(
-                            _imageData!,
-                          )),
-                          borderRadius: BorderRadius.circular(
-                              styleSheet.SHAPES.RADIUS_MEDIUM),
-                          border:
-                              Border.all(color: styleSheet.COLORS.GREY_LIGHT),
-                        ),
-                        child: IconButton(
-                            onPressed: () {
-                              _imageData = null;
-                              setState(() {});
-                            },
-                            icon: Icon(Icons.delete)),
-                      )
+                        styleSheet.SPACING.addHeight(styleSheet.SPACING.medium)
+                      ] else
+                        Container(
+                          width: 100,
+                          height: 100,
+                          margin: EdgeInsets.only(bottom: 20),
+                          padding: styleSheet.SPACING.PADDING_MEDIUM,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: MemoryImage(
+                              _imageData!,
+                            )),
+                            borderRadius: BorderRadius.circular(
+                                styleSheet.SHAPES.RADIUS_MEDIUM),
+                            border:
+                                Border.all(color: styleSheet.COLORS.GREY_LIGHT),
+                          ),
+                          child: IconButton(
+                              onPressed: () {
+                                _imageData = null;
+                                setState(() {});
+                              },
+                              icon: Icon(Icons.delete)),
+                        )
+                    ]
                   ],
                 ),
 
@@ -402,11 +405,11 @@ class _NewProductDetailsViewState extends State<NewProductDetailsView> {
                     child: CustomPrimaryBtnView(
                         btnName: "ADD TO CART",
                         onPressed: () {
-                          if (widget.productModel.isImageRequired &&
+                          if (widget.productModel.isImageRequired != false &&
                               messageController.text.isEmpty) {
-                            Get.snackbar("Error",
-                                "Please add a message or select any image");
-                          } else if (widget.productModel.isImageRequired &&
+                            Get.snackbar("Error", "Please add a message");
+                          } else if (widget.productModel.isImageRequired ==
+                                  true &&
                               _imageData == null) {
                             Get.snackbar("Error", "Please select any image");
                           } else {
@@ -441,11 +444,11 @@ class _NewProductDetailsViewState extends State<NewProductDetailsView> {
                     child: CustomPrimaryBtnView(
                         btnName: "Buy Now",
                         onPressed: () {
-                          if (widget.productModel.isImageRequired &&
+                          if (widget.productModel.isImageRequired != false &&
                               messageController.text.isEmpty) {
-                            Get.snackbar("Error",
-                                "Please add a message or select any image");
-                          } else if (widget.productModel.isImageRequired &&
+                            Get.snackbar("Error", "Please add a message");
+                          } else if (widget.productModel.isImageRequired ==
+                                  true &&
                               _imageData == null) {
                             Get.snackbar("Error", "Please select any image");
                           } else {

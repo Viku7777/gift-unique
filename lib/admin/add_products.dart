@@ -25,7 +25,8 @@ class _AddProductsViewState extends State<AddProductsView> {
   TextEditingController vfinalPrice = TextEditingController();
   TextEditingController vprice = TextEditingController();
   TextEditingController imageurl = TextEditingController();
-  bool isImageRequired = false;
+  bool? isImageRequired;
+  String? productType;
 
   var adminController = Get.find<AdminController>();
 
@@ -39,7 +40,12 @@ class _AddProductsViewState extends State<AddProductsView> {
       oldPriceController.text = product.oldPrice.toString();
       ratingController.text = product.rating.toString();
       countRatingController.text = product.totalrating.toString();
-      isImageRequired = product.isImageRequired;
+      // isImageRequired = product.isImageRequired;
+      productType = product.isImageRequired == null
+          ? "text"
+          : product.isImageRequired == false
+              ? "Without Img"
+              : "With Image";
       updateImageFile = product.images;
       titlecontroller.text = product.title;
       category = adminController.allCategorys
@@ -150,18 +156,38 @@ class _AddProductsViewState extends State<AddProductsView> {
                               setState(() {});
                             },
                           )),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Expanded(
-                              child: SwitchListTile(
-                            value: isImageRequired,
-                            onChanged: (v) {
-                              isImageRequired = v;
+                              child: DropdownButtonFormField(
+                            hint: const Text("Product Type"),
+                            value: productType,
+                            items: controller.productType
+                                .map((e) => DropdownMenuItem(
+                                      value: e,
+                                      child: Text(e),
+                                    ))
+                                .toList(),
+                            onChanged: (value) {
+                              isImageRequired = value == "text"
+                                  ? null
+                                  : value == "Without Img"
+                                      ? false
+                                      : true;
+                              productType = value;
                               setState(() {});
                             },
-                            title: Text("Image Req"),
-                          ))
+                          )),
+                          // Expanded(
+                          //     child: SwitchListTile(
+                          //   value: isImageRequired,
+                          //   onChanged: (v) {
+                          //     isImageRequired = v;
+                          //     setState(() {});
+                          //   },
+                          //   title: Text("Image Req"),
+                          // ))
                         ],
                       ),
                       SizedBox(
