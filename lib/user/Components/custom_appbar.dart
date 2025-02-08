@@ -5,10 +5,14 @@ PreferredSizeWidget customAppbar() {
     foregroundColor: styleSheet.COLORS.BLACK_COLOR,
     elevation: 0,
     backgroundColor: styleSheet.COLORS.WHITE,
-    title: Image.asset(
-      AppConfig.appLogo,
-      width: styleSheet.SPACING.widthsmall,
+    title: Text(
+      "Loves Gift",
+      style: styleSheet.TEXT_CONDENSED.FS_BOLD_24,
     ),
+    // title: Image.asset(
+    //   AppConfig.appLogo,
+    //   width: styleSheet.SPACING.widthsmall,
+    // ),
   );
 }
 
