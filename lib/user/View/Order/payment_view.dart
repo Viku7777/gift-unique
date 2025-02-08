@@ -87,6 +87,12 @@ class _PaymentViewState extends State<PaymentView> {
                           "https://cdn-icons-gif.flaticon.com/7994/7994392.gif",
                           height: 100,
                         ),
+                        Text(
+                          "Take a Screenshot after then scan",
+                          textAlign: TextAlign.center,
+                          style: styleSheet.TEXT_Rubik.FS_MEDIUM_15
+                              .copyWith(color: Colors.red),
+                        ),
                         styleSheet.SPACING.addHeight(styleSheet.SPACING.medium),
                         const LinearProgressIndicator(
                             // backgroundColor: styleSheet.COLORS.BTN_PRIMARY,
@@ -108,7 +114,7 @@ class _PaymentViewState extends State<PaymentView> {
                             })
                         .paddingSymmetric(horizontal: styleSheet.SPACING.large),
                     styleSheet.SPACING.addHeight(styleSheet.SPACING.large),
-                    BottomWidgetView()
+                    // BottomWidgetView()
                   ],
                 ),
         ));
