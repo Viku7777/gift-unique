@@ -3,6 +3,7 @@ import 'package:color_game/user/View/Dashboard/new_product_details_view.dart';
 import 'package:color_game/user/View/Dashboard/product_details_view.dart';
 import 'package:color_game/export_widget.dart';
 
+//
 class CustomerPuchasedView extends StatefulWidget {
   const CustomerPuchasedView({super.key});
 
@@ -30,7 +31,9 @@ class _CustomerPuchasedViewState extends State<CustomerPuchasedView> {
       ),
       items: productController.allProducts.map((pr) {
         return GestureDetector(
-          onTap: () => Get.to(() => NewProductDetailsView(productModel: pr)),
+          onTap: () => Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => NewProductDetailsView(productModel: pr),
+          )),
           child: Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: styleSheet.SPACING.small,
@@ -41,3 +44,5 @@ class _CustomerPuchasedViewState extends State<CustomerPuchasedView> {
     );
   }
 }
+
+// 

@@ -196,7 +196,13 @@ class AdminController extends GetxController {
     updateloading(false);
   }
 
-  Future<void> deleteProduct(String uuid) async {}
+  Future<void> deleteProduct(String uuid) async {
+    Get.back();
+    allProducts.removeWhere((e) => e.uuid == uuid);
+    await productsRef.doc(uuid).delete();
+    update();
+  }
+
   Future<void> editProduct(NewProductModel model) async {}
   Future<void> editDetails() async {
     updateloading(true);

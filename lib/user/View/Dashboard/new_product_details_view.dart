@@ -124,43 +124,46 @@ class _NewProductDetailsViewState extends State<NewProductDetailsView> {
               styleSheet.SPACING.addHeight(styleSheet.SPACING.medium),
               // Thumbnail images
               Obx(
-                () => Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ...List.generate(widget.productModel.images.length,
-                        (index) {
-                      return GestureDetector(
-                        onTap: () {
-                          _productImageIndex(index);
-                        },
-                        child: Container(
-                          margin:
-                              EdgeInsets.only(right: styleSheet.SPACING.small),
-                          width: 80,
-                          height: 80,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                                  color: _productImageIndex.value == index
-                                      ? styleSheet.COLORS.BLACK_COLOR
-                                      : styleSheet.COLORS.WHITE,
-                                  width: 2),
+                () => SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ...List.generate(widget.productModel.images.length,
+                          (index) {
+                        return GestureDetector(
+                          onTap: () {
+                            _productImageIndex(index);
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(
+                                right: styleSheet.SPACING.small),
+                            width: 80,
+                            height: 80,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: _productImageIndex.value == index
+                                        ? styleSheet.COLORS.BLACK_COLOR
+                                        : styleSheet.COLORS.WHITE,
+                                    width: 2),
+                                borderRadius: BorderRadius.circular(
+                                    styleSheet.SHAPES.RADIUS_MIN)),
+                            child: ClipRRect(
                               borderRadius: BorderRadius.circular(
-                                  styleSheet.SHAPES.RADIUS_MIN)),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(
-                                styleSheet.SHAPES.RADIUS_MIN),
-                            child: Image.network(
-                              widget.productModel
-                                  .images[index], // Replace with thumbnail
+                                  styleSheet.SHAPES.RADIUS_MIN),
+                              child: Image.network(
+                                widget.productModel
+                                    .images[index], // Replace with thumbnail
 
-                              // fit: BoxFit.fitHeight,
+                                // fit: BoxFit.fitHeight,
+                              ),
                             ),
                           ),
-                        ),
-                      );
-                    })
-                  ],
+                        );
+                      })
+                    ],
+                  ),
                 ),
               ),
               const Divider(),
@@ -580,6 +583,78 @@ class _NewProductDetailsViewState extends State<NewProductDetailsView> {
               const Divider(),
               styleSheet.SPACING.addHeight(styleSheet.SPACING.medium),
 
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "You may also like",
+                  style: styleSheet.TEXT_CONDENSED.FS_MEDIUM_24,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              styleSheet.SPACING.addHeight(styleSheet.SPACING.large),
+
+              Builder(builder: (context) {
+                List<NewProductModel> youmayLikeProducts = product.allProducts
+                    .where(
+                        (e) => e.categoryID == widget.productModel.categoryID)
+                    .toList();
+
+                return GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 15,
+                    mainAxisSpacing: 30,
+                    childAspectRatio: 0.7,
+                  ),
+                  itemCount: youmayLikeProducts.isEmpty
+                      ? 5
+                      : youmayLikeProducts.length > 5
+                          ? 5
+                          : youmayLikeProducts.length,
+                  itemBuilder: (context, index) {
+                    var pr = youmayLikeProducts.isNotEmpty
+                        ? youmayLikeProducts[index]
+                        : product.allProducts[
+                            Random().nextInt(product.allProducts.length - 1)];
+                    return GestureDetector(
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) =>
+                              NewProductDetailsView(productModel: pr))),
+                      child: NewProductCardView(
+                        product: pr,
+                      ),
+                    );
+                  },
+                );
+              }),
+
+              styleSheet.SPACING.addHeight(styleSheet.SPACING.large),
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  "Customers also purchased",
+                  style: styleSheet.TEXT_CONDENSED.FS_MEDIUM_24,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              styleSheet.SPACING.addHeight(styleSheet.SPACING.large),
+
+              const CustomerPuchasedView(),
+
+              styleSheet.SPACING.addHeight(styleSheet.SPACING.large),
+            ],
+          ).paddingAll(styleSheet.SPACING.medium),
+          BottomWidgetView()
+        ],
+      ),
+    );
+  }
+}
+
+
+
               // GridView.builder(
               //     physics: const NeverScrollableScrollPhysics(),
               //     shrinkWrap: true,
@@ -645,71 +720,3 @@ class _NewProductDetailsViewState extends State<NewProductDetailsView> {
               //   ],
               // ),
               // styleSheet.SPACING.addHeight(styleSheet.SPACING.large),
-              Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "You may also like",
-                  style: styleSheet.TEXT_CONDENSED.FS_MEDIUM_24,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              styleSheet.SPACING.addHeight(styleSheet.SPACING.large),
-
-              Builder(builder: (context) {
-                List<NewProductModel> youmayLikeProducts = product.allProducts
-                    .where(
-                        (e) => e.categoryID == widget.productModel.categoryID)
-                    .toList();
-
-                return GridView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 15,
-                    mainAxisSpacing: 30,
-                    childAspectRatio: 0.7,
-                  ),
-                  itemCount: youmayLikeProducts.isEmpty
-                      ? 5
-                      : youmayLikeProducts.length > 5
-                          ? 5
-                          : youmayLikeProducts.length,
-                  itemBuilder: (context, index) {
-                    var pr = youmayLikeProducts.isNotEmpty
-                        ? youmayLikeProducts[index]
-                        : product.allProducts[
-                            Random().nextInt(product.allProducts.length - 1)];
-                    return InkWell(
-                      onTap: () =>
-                          Get.to(() => NewProductDetailsView(productModel: pr)),
-                      child: NewProductCardView(
-                        product: pr,
-                      ),
-                    );
-                  },
-                );
-              }),
-
-              styleSheet.SPACING.addHeight(styleSheet.SPACING.large),
-              Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "Customers also purchased",
-                  style: styleSheet.TEXT_CONDENSED.FS_MEDIUM_24,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              styleSheet.SPACING.addHeight(styleSheet.SPACING.large),
-
-              const CustomerPuchasedView(),
-
-              styleSheet.SPACING.addHeight(styleSheet.SPACING.large),
-            ],
-          ).paddingAll(styleSheet.SPACING.medium),
-          BottomWidgetView()
-        ],
-      ),
-    );
-  }
-}

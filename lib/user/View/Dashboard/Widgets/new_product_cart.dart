@@ -6,15 +6,7 @@ import '../../../../export_widget.dart';
 
 class NewProductCardView extends StatelessWidget {
   NewProductModel product;
-  // String title;
-  // String imageUrl;
-  // String price;
-  NewProductCardView(
-      {required this.product,
-      //   required this.imageUrl,
-      // required this.price,
-      // required this.title,
-      super.key});
+  NewProductCardView({required this.product, super.key});
 
   var wishlistcontroller = Get.put(WishlistController());
 

@@ -99,9 +99,9 @@ Route<dynamic> _generateRoute(RouteSettings settings) {
             ));
   } else {
     switch (settings.name) {
-      case '/':
-        return MaterialPageRoute(builder: (_) => BottomNavBarView());
       case '/admin':
+        return MaterialPageRoute(builder: (_) => BottomNavBarView());
+      case '/':
         return MaterialPageRoute(builder: (_) => const AdminDashboard());
 
       default:
